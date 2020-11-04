@@ -122,8 +122,20 @@ $(function() {
      value = $(this).val();
      console.log(value);
      if ( value === "animal" ) {
-       $(".principal").append("CIAOOOOOOOOOOO")
+       const filterAnimal = icons.filter( (element,index) => {
+         return element.type === "animal"
+       } );
+       console.log(filterAnimal);
+     }else if ( value === "fruit" ) {
+       const filterFruit = icons.filter( (element,index) => {
+         return element.type === "fruit"
+       } );
+       console.log(filterFruit);
+     }else if ( value === "user" ) {
+       const filterUser = icons.filter( (element,index) => {
+         return element.type === "user"
+       } );
+       console.log(filterUser);
      }
     });
-
  });
