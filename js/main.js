@@ -80,15 +80,19 @@ const icons = [
     type: "user" ,
   },
 ];
+const htmlArray = [];
 icons.forEach((item, i) => {
   icon = item.icon ;
   name = item.name;
-  document.getElementsByClassName("principal").append(
-  `
-  <div class="icon">
-    <i class="${icon}"></i>
-    <h5>${name}</h5>
-  </div>
-  ` );
+  const html =    `
+      <div class="icon">
+        <i class="${icon}"></i>
+        <h5>${name}</h5>
+      </div>
+      `;
+      htmlArray.push(html);
 
+});
+ htmlArray.forEach((div, a, ) => {
+  $(".principal").append(div);
 });
