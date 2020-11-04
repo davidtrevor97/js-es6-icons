@@ -5,7 +5,7 @@ const icons = [
     type: "animal" ,
   },
   {
-    icon:  "fad fa-crow",
+    icon:  "fas fa-crow",
     name: "crow" ,
     type: "animal"  ,
   },
@@ -81,6 +81,20 @@ const icons = [
   },
 ];
 const htmlArray = [];
+//confronto i type, a seconda dei tipi aggiungo il valore ( classe ) "color" alla corrispettiva proprietà(key)  icon
+//selezione colore
+icons.forEach( ( item, i ) =>{
+  type = item.type;
+  if ( type === "animal") {
+    item.icon = (item.icon + " blue");
+  }else if ( type === "fruit") {
+    item.icon = (item.icon + " orange");
+  }else {
+    item.icon = (item.icon + " purple");
+  }
+  console.log(item.icon);
+} );
+//creazione dell'HTML dinamico in base a classi e nomi delle icone
 icons.forEach((item, i) => {
   icon = item.icon ;
   name = item.name;
@@ -93,6 +107,23 @@ icons.forEach((item, i) => {
       htmlArray.push(html);
 
 });
- htmlArray.forEach((div, a, ) => {
-  $(".principal").append(div);
+//inserimento dell'HTML già modificato
+htmlArray.forEach((div, a, ) => {
+ $(".principal").append(div);
 });
+//filtraggio delle icone a seconda di TYPE
+//riconoscere il cambiamento di option e il valore inserito, al cambiare del valore JS filtra gli oggetti in base al corrispettivo TYPE.
+//capire il valore di option
+
+let value = "all"
+
+$(function() {
+     $("#list").change( function() {
+     value = $(this).val();
+     console.log(value);
+     if ( value === "animal" ) {
+       $(".principal").append("CIAOOOOOOOOOOO")
+     }
+    });
+
+ });
